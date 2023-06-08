@@ -12,13 +12,12 @@ const PORT = 3000;
 app.use(cors())
 app.use(express.json());
 
-// gestiona las rutas de router.js
-app.use(router);
-
 app.get('/health', auth, (req, res) => {
     return res.send('healthy');
 });
 
+// gestiona las rutas de router.js
+app.use(router);
 
 db.then(() =>
     {
